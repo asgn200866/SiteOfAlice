@@ -1,14 +1,88 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://db.onlinewebfonts.com/c/1c7a4d85137bb329effaa631ffd183c5?family=KyivType+Titling");
+
+:root {
+  --color--header--button: #d9d9d9;
+  --color--main--background: #c6c6c4;
+  --color--pattern--line: #7b7b7b;
+  --otels--color--title: #ce664b;
+  --color--travel--tips: #efefef;
+  --foot--color--background: #efefef;
+  --form-input-bg: #d9d9d9;
+  --form-border-color: #cccccc;
+  --form-button-color: #888888;
+  --form-button-hover: #666666;
+}
 
 body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   margin: 0;
-  background-color: #c6c6c4;
+  padding: 0;
+  background-color: var(--color--main--background);
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  scroll-behavior: smooth;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
 }
 
 header {
   height: 10vh;
   background-image: url(/galery/bg_fon.svg);
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.contact-number {
+  position: absolute;
+  top: 7vh;
+  left: 12vw;
+  font-size: 1.3rem;
+}
+
+.nav-button {
+  position: absolute;
+  display: flex;
+  top: 5.5vh;
+  right: 1.5vw;
+  gap: 2vw;
+}
+
+.menu-head {
+  margin-top: -3vh;
+  width: 4vw;
+  height: 4vw;
+}
+
+.image-menu {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.about-us-btn-header,
+.sights-btn-head,
+.otel-btn-head,
+.contact-btn-head {
+  font-size: 1.2rem;
+  background-color: var(--color--header--button);
+  padding: 5px;
 }
 
 .patterned-line-head {
@@ -19,8 +93,8 @@ header {
   display: block;
   padding: 1vh;
 
-  border-top: 7px solid #7b7b7b; /* Серая линия сверху */
-  border-bottom: 7px solid #7b7b7b; /* Серая линия снизу */
+  border-top: 7px solid var(--color--pattern--line);
+  border-bottom: 7px solid var(--color--pattern--line);
 }
 
 .fs-top {
@@ -31,7 +105,7 @@ header {
   margin-right: 5vw;
   margin-top: 4vh;
   margin-bottom: 0;
-  line-height: 1.3;
+  line-height: 1.4;
 
   font-family: "Oswald", sans-serif;
   font-weight: normal;
@@ -40,18 +114,19 @@ header {
 
 .fs-text {
   grid-area: fs-text;
-  width: 50vw;
+  width: 46vw;
   margin-left: 0vw;
   margin-right: 5vw;
   margin-top: 7vh;
   margin-bottom: 0;
-  line-height: 1.3;
+  line-height: 1.7;
   padding-right: 15vw;
 
-  font-size: 1.2rem;
-  font-family: "KyivType Serif", Georgia, serif;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-family: "KyivType Titling", serif;
+  font-weight: 100;
   letter-spacing: 0.3rem;
+  text-align: justify;
 }
 
 .image-top {
@@ -69,14 +144,361 @@ header {
   background-image: url(/galery/bg_fon.svg);
   background-size: cover;
   display: grid;
-  /* grid-template-columns: 2fr 2fr; */
+
   grid-template-rows: 3.72vh 35vh 50vh;
   grid-template-areas:
     "patterned-line-head patterned-line-head"
     "fs-top fs-text"
     "image-top image-top";
 
-  width: 100%;
-  height: 90vh;
   overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  height: 90vh;
+}
+
+.pattern-line-ss {
+  grid-area: pattern-line-ss;
+  margin-top: 4vh;
+
+  box-shadow: inset 0 7px 0 0 var(--color--pattern--line);
+  border-bottom: 7px solid var(--color--pattern--line);
+}
+
+.ss-text {
+  grid-area: ss-text;
+  padding: 4vh 6vw 0 6vw;
+  width: 35vw;
+
+  font-family: "KyivType Titling", serif;
+  line-height: 1.2;
+  font-weight: 350;
+
+  text-align: justify;
+  opacity: 0.8;
+}
+
+.ss-photo-chram {
+  grid-area: ss-photo-chram;
+  margin-top: 5vh;
+}
+
+.ss-photo-most {
+  grid-area: ss-photo-most;
+  margin-top: 5vh;
+}
+
+.ss-photo-lodka {
+  grid-area: ss-photo-lodka;
+}
+
+.about-us {
+  display: grid;
+  grid-template-areas:
+    "pattern-line-ss pattern-line-ss pattern-line-ss"
+    "ss-text ss-photo-chram ss-photo-most"
+    "ss-text ss-photo-lodka ss-photo-lodka";
+  grid-template-rows: 11.4vh 50vh 40vh;
+}
+
+.pattern-start-line-ts {
+  grid-area: pattern-start-line-ts;
+  margin-top: 4vh;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+
+  box-shadow: inset 0 7px 0 0 var(--color--pattern--line);
+  border-bottom: 7px solid var(--color--pattern--line);
+}
+.card-1 {
+  grid-area: card-1;
+}
+
+.card-2 {
+  grid-area: card-2;
+}
+
+.card-3 {
+  grid-area: card-3;
+}
+
+.card-4 {
+  grid-area: card-4;
+}
+
+.card-5 {
+  grid-area: card-5;
+}
+
+.card-6 {
+  grid-area: card-6;
+}
+
+.card-shablon {
+  text-align: center;
+  margin: 10vh auto 30vh auto;
+  width: 100%;
+
+  font-family: "KyivType Titling", serif;
+  letter-spacing: 0.3rem;
+
+  font-weight: 400;
+  line-height: 1.8;
+  font-size: 0.9rem;
+}
+
+.ts-text-title {
+  font-family: "KyivType Titling", serif;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.sights {
+  display: grid;
+  background: url(galery/bg-fon-ts.svg);
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  height: 200vh;
+
+  grid-template-areas:
+    "pattern-start-line-ts pattern-start-line-ts pattern-start-line-ts"
+    "card-1 card-2 card-3" "card-4 card-5 card-6";
+  grid-template-rows: 11.4vh 90vh 90vh;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.pattern-line-otels {
+  grid-area: pattern-line-otels;
+  margin-top: 5vh;
+
+  width: 100%;
+
+  box-shadow: inset 0 7px 0 0 var(--color--pattern--line);
+  border-bottom: 7px solid var(--color--pattern--line);
+}
+
+.otels-title-column {
+  font-family: "KyivType Titling", serif;
+  padding: 2vh 2vw 0 2vw;
+  font-size: 1.2rem;
+  border-bottom: 4px solid var(--otels--color--title);
+  font-weight: 600;
+}
+
+.text-otels-top {
+  grid-area: text-otels-top;
+  width: 92vw;
+  margin: 3vh auto 1vh auto;
+  font-weight: 100;
+}
+
+.column-budget {
+  grid-area: column-budget;
+  text-align: center;
+}
+
+.column-premium {
+  grid-area: column-premium;
+  text-align: center;
+}
+
+.travel-tips {
+  grid-area: travel-tips;
+  text-align: left;
+  margin-left: 3vw;
+  margin-bottom: 10vh;
+  background-color: var(--color--travel--tips);
+  border-radius: 2vh;
+  height: 13vh;
+  width: 75vw;
+}
+
+.travel-tips-h4 {
+  font-family: "KyivType Titling", serif;
+  margin: 0;
+  padding-left: 1vw;
+  font-weight: 350;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.3;
+}
+
+.otels-photo {
+  grid-area: otels-photo;
+  justify-self: end;
+  margin-right: 3vw;
+}
+
+.otels-title {
+  grid-area: otels-title;
+  font-family: "KyivType Titling", serif;
+}
+
+.otels-description {
+  grid-area: otels-description;
+  font-family: "KyivType Titling", serif;
+  font-size: 0.9rem;
+  font-weight: 350;
+  width: 28vw;
+}
+
+.card-otel {
+  display: grid;
+  grid-template-areas:
+    "otels-photo otels-title"
+    "otels-photo otels-description";
+  grid-template-columns: 1fr 2fr;
+  text-align: left;
+  margin-top: 1vh;
+}
+
+.otels {
+  display: grid;
+  grid-template-areas:
+    "pattern-line-otels pattern-line-otels"
+    "text-otels-top text-otels-top"
+    "column-budget column-premium"
+    "travel-tips travel-tips";
+  width: 100%;
+  height: 100vh;
+  grid-template-rows: 12.4vh 10vh 60vh 10vh;
+  grid-template-columns: 1fr 1fr;
+}
+
+footer {
+  background: url(galery/footet_bg.svg);
+  height: 100vh;
+  position: relative;
+}
+
+.foot-quest {
+  position: absolute;
+  display: flex;
+
+  font-size: 1.8rem;
+  font-weight: 350;
+  font-family: "KyivType Titling", serif;
+
+  top: 3vh;
+  left: 5vw;
+  background-color: var(--foot--color--background);
+  width: 40vw;
+  height: 12vh;
+  border-radius: 3vh;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.preform-text {
+  position: absolute;
+  top: 25vh;
+  left: 5vw;
+
+  width: 70vw;
+  height: 6vh;
+  border-radius: 1.5vh;
+  padding: 0 3vw 0 3vw;
+  background-color: var(--foot--color--background);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "KyivType Titling", serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+
+.form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  width: 70vw;
+  height: 50vh;
+  background-color: var(--foot--color--background);
+  border-radius: 4vh;
+  top: 40vh;
+  left: 5vw;
+}
+
+.form-text {
+  font-family: "KyivType Titling", serif;
+  font-size: 1.4rem;
+  margin: 4vh 0 4vh 3vw;
+}
+
+.form form {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 15px 20px;
+  align-items: center;
+  flex: 1;
+  margin-left: 3vw;
+}
+
+.form form label[for="message"] {
+  grid-column: 1 / -1;
+  margin-top: 4vh;
+  font-family: "KyivType Titling", serif;
+}
+
+.form form textarea {
+  grid-column: 1 / -1;
+  width: 26vw;
+  height: 10vh;
+  padding: 10px;
+  border: 1px solid var(--form-border-color);
+  border-radius: 8px;
+  background-color: var(--form-input-bg);
+  resize: vertical;
+}
+
+.form form input {
+  width: 250px;
+  padding: 8px 12px;
+  border: 1px solid var(--form-border-color);
+  border-radius: 8px;
+  background-color: var(--form-input-bg);
+}
+
+.form form button {
+  grid-column: 2;
+  width: 12vw;
+  height: 4vh;
+  background-color: var(--form-button-color);
+  color: var(--color--header--button);
+  border: none;
+  padding: 10px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  justify-self: end;
+  align-self: end;
+  margin: 0 3vw 5vh 0;
+}
+
+#about,
+#sights,
+#hotels,
+#contacts {
+  scroll-margin-top: 0vh;
+}
+
+:target {
+  animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+  0% {
+    background-color: rgba(206, 102, 75, 0.3);
+  }
+  100% {
+    background-color: transparent;
+  }
 }
